@@ -1,0 +1,35 @@
+
+.m-left{
+    margin-left: 3rem;
+}
+
+.m-left-4{
+    margin-left: 2px;
+}
+
+.b-b{
+    padding: 10px;
+    color: #ffff;
+    border-bottom: #746CBB 1px solid;
+    transition: all 0.4s;
+    
+}
+
+.b-b:hover{
+    background-color:#746CBB;
+    border-radius: 1rem;
+}
+
+.b-b-purple{
+    padding: 2px;
+    border-bottom: #746CBB 1px solid;
+}
+
+.next-js{
+    padding-top: 2px;
+}
+.m-bottom{
+    height: 400px;
+    margin-bottom: 5rem;
+    margin-top: 20rem;
+}

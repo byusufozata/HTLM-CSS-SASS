@@ -1,0 +1,593 @@
+@import url(./utilites.css);
+
+
+$header-color: #1E194F;
+$purple :#2E2675;
+$pink: #D581C7;
+$p-purple: #746CBB;
+$dark-purple: #1E194F;
+$light-purple:#D7D2FF;
+// mıxın
+
+@mixin media ($screensize) {
+
+    @if ($screensize == x-large){
+        @media(max-width: 1240px) {@content};
+    }
+
+    @if ($screensize == large){
+        @media(max-width: 992px) {@content};
+    }
+
+    @if ($screensize == medium){
+        @media(max-width: 720px) {@content};
+    }
+
+    @if ($screensize == small){
+        @media(max-width: 540px) {@content};
+    }
+}
+
+
+
+
+body{
+    font-size: 20px;
+    background-color: rgb(230, 224, 224);
+    box-sizing: border-box;
+}
+
+
+header{
+    width: 100%;
+    height: 300px;
+    background-color: $header-color;
+    position: relative;
+    @include media(medium){
+        margin: 0;
+        height: 550px;
+    }
+    @include media(small){
+        margin: 0;
+        vertical-align: 100%;
+    }
+
+
+    .container{
+        margin-left: 20%;
+        margin-right: 20%;
+        @include media(medium){
+            margin: 0; 
+        }
+        @include media(small){
+            margin: 0;
+            padding: 0;            
+        }
+        
+        nav{
+            padding-top: 2rem;
+
+
+            ul{
+                display: flex;
+                @include media(medium){
+                    flex-direction: column;
+                    margin-left: 3rem;
+                    margin-right: 3rem;
+                }
+                @include media(small){
+                    margin: 0;
+                    tesxt-align: center;
+                }
+                li{
+                    @include media(medium){
+                        padding: 2rem;
+                        margin:0;
+                        width: 80%;
+                        height: 80%;
+                        border-bottom: none;
+                    }
+                    a{
+                        text-decoration: none;
+                        color: #ffff;
+                        text-transform: uppercase;
+                        display: block; 
+                    }
+                }
+            }
+
+        }
+        .header-text{
+            width:504px ;
+            height:180px;
+            margin-top: 3rem;
+            color: $p-purple;
+            line-height:1.6rem;
+            @include media(medium){
+                width: 100%;
+                height: 100%;
+                margin-top: 2rem;
+                margin-left: 5rem;
+                margin-right: 5rem;
+                font-size: 1.2rem;
+                justify-content: center;
+
+                :hover{
+                    border-radius: 2px;
+                }
+
+            }
+            @include media(small){
+                font-size: 1rem;
+                margin: 0;
+                margin-left: 1rem;
+                
+            }
+            
+            span{
+                a{
+                    text-decoration: none;
+                    @include media(medium){
+                        display: inline-block;
+                        margin:0;
+                        padding: 0;
+                        
+                    }
+                    @include media(small){
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        }
+        .iam{
+            width:200px ;
+            height:200px ;
+            position: absolute;
+            top: 10%;
+            right: 25%;
+            border-radius: 50%;
+            box-shadow: 20px 20px 50px 15px $light-purple;    
+            @include media(large){
+                display: none;
+            } 
+            @include media(medium){
+                display: none;
+            }     
+            @include media(small){
+                display: block;
+                top:10%;
+                right: 0;
+            }  
+        }
+    }
+    
+    
+}
+.container{
+    margin-left: 20%;
+    margin-right: 20%;
+    @include media(large){
+        margin: 0;
+    }
+    @include media(medium){
+        overflow: hidden;
+        margin: 0;
+    }
+    @include media(small){
+        margin: 0;
+    }
+    section{
+        display: flex;
+        @include media(medium){
+            display: block;
+        }
+        @include media(small){
+            margin: 0;
+        }
+
+        .recent-posts{
+            width: 70%;
+            @include media(large){
+                width: 900px;
+                height: 100%;
+                margin-left: 7rem;
+            }
+            @include media(medium){
+                width: 80%;
+            }
+            @include media(small){
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            h2{
+                margin-top: 3rem;
+                @include media(medium){
+                    margin: 3rem 0 3rem 5rem;
+                }
+                @include media(small){
+                   text-align: center;
+                   padding-right: 6rem;
+                   visibility: hidden;
+
+                }
+                
+            }
+            .white-card{
+                margin-top: 2rem;
+                background-color: transparent;
+                border-radius: 1rem;
+                box-shadow: 20px 20px 50px 10px $light-purple;
+                height: 280px;
+                
+                @include media(x-large){
+                    height: 330px;
+                }
+                @include media(large){
+                    height: 320px;
+                    width: 100%;
+                    padding: 2rem;  
+                }
+                @include media(medium){
+                    width: 100%;
+                    height: 300px;
+                    margin: 2rem 0 3rem 0rem;
+                    padding: 0;
+                }
+                @include media(small){
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
+                }
+                
+                
+                h6{
+                    color: $p-purple;
+                    font-size: 1rem;
+                    padding-top: 1rem;
+                }
+                h5{
+                    color:$pink;
+                    font-size: 1.5rem;
+                    font-style: italic;
+                    margin-top: 1rem;
+                }
+                h3{
+                    color: $purple;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    margin-top: 1rem;
+
+                }
+                p{
+                    color: $p-purple;
+                    font-size: 1rem;
+                    margin-top: 1rem;
+
+                
+                }
+                .read{
+                    display: inline-block;
+                    margin-top: 1.3rem; 
+                    padding: 10px;
+                    color: #ffff;
+                    border-bottom: #746CBB 1px solid;
+                    transition: all 0.4s;
+                    :hover{
+                        
+                        padding: 10px;
+                        border-radius: 1rem;
+                        background-color: #746CBB ;
+                        color: white;
+                    } 
+                    @include media(x-large){
+                        margin-bottom: 1rem;
+                    }
+                    @include media(small){
+                        
+                        margin-bottom: 1rem;
+                    }
+
+
+                    }
+                    a{
+                        text-decoration: none;
+                        color: $p-purple;
+                        display: inline-block;
+                        a :hover{                
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .purple-card{
+                width: 100%;
+                height: 10%;
+                margin-top: 4rem;
+                display: flex;
+                align-items: center;
+                background-color: $dark-purple ;
+                border-radius: 1rem;
+                cursor: pointer;
+                animation: mymove 5s infinite;
+                @keyframes mymove {
+                    50% {box-shadow: 10px 20px 30px $header-color;}
+                  }
+
+                  @include media(medium){
+                      width: 100%;
+                      margin-left: 0rem;
+                      padding: 0;
+                  }
+                .card-image{
+                    margin-left: 2rem;
+                    @include media(large){
+                        display: none;
+                    }
+                    @include media(small){
+                        display: block;
+                    }
+                }
+                .purple-text{
+                    height: 120px;
+                    margin-left:1rem;
+                    @include media(large){
+                        margin-left: 1rem;
+                    }
+                    h6{
+                       color: $light-purple;
+                       font-size: 1rem; 
+                       @include media(large){
+                           margin-left: 1rem;
+                       }
+                    }
+                    h5{
+                        margin-top: 1rem;
+                        color: $pink;
+                        font-size: 1rem;
+                        font-style: italic;
+                        @include media(large){
+                            margin-left: 1rem;
+                        }
+                    }
+                    .purple-card-text{
+                        margin-top: 1rem;
+                        color: #ffff;
+                        font-style: bold;
+                        font-size: 1.2rem;
+                        @include media(large){
+                            margin-left: 1rem;
+                        }
+                            
+                        
+                    }
+                    .purple-h6{
+                        margin-top: 1rem;
+                       
+                    }
+                }
+                @include media(large){
+                    width: 100%;
+                    height: 200px;
+                    margin-top: 4rem;
+                    margin-bottom: 4rem;
+                }
+            }
+        }
+        .current-project{
+            height: 30%;
+            margin-left: 6rem;
+            @include media(large){
+                margin:5rem;
+                height: 40%; 
+
+            }
+
+            h2{
+                margin-top: 3rem;
+                @include media(medium){
+                    margin-top: 5rem ;
+                   
+                    
+                }
+            }
+            .current-image{
+                margin-top: 2rem;
+                @include media(medium){
+                }
+                
+                
+            }
+            h3{
+                margin-top: 2rem;
+                color: $purple;
+                font-weight: bold;
+                font-size: 1.5rem;
+                
+            }
+            p{
+                margin-top: 2rem;
+                color: $p-purple;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+            .post-types{
+              margin-top: 2rem;
+              height: inherit;
+              width: 300px;
+              display: flex;
+              flex-wrap: wrap;
+              @include media(medium){
+                  height: 100%;
+                  width: 100%;
+                  flex-wrap: wrap;
+                  flex-direction: row;
+                  
+              }
+              
+                           
+            }
+            .populer-content{
+                ul{
+                    margin-top: 2rem;
+                    li{
+                        margin-top: 2rem;
+                        
+                        a{
+                            text-decoration: none;
+                            
+                            padding-top: 5px;
+                            .next-js{
+                                display: inline-block;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+            .pink-post-types{
+                width: 100px;
+                height: 50px;
+                background: rgba(213, 129, 199, 0.08);
+                margin-top: 1rem;
+                border-radius: 1rem;
+                display: flex;
+                line-height: 10px;
+                justify-content: center;
+                align-items: center;
+                p{
+                    
+                    text-transform: uppercase;
+                    padding-bottom: 2rem;
+                    text-align: center;
+                    color: $pink;  
+                }
+
+            }
+        }
+    }
+    
+    
+
+footer{
+
+    width:100%;
+    height:200px;
+    background-color: $header-color;
+    @include media(large){
+        height: 500px;
+        flex-direction: column;    
+    }
+    @include media(medium){
+        height: 600px;
+        flex-direction: row;
+        position: relative;
+    }
+    
+    .footer-box{
+        margin-top: 15rem;
+        padding-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include media(large){
+            margin-left: 7rem;
+            margin-right: 7rem;
+
+        }
+
+        
+
+        ul{
+            display: flex;
+            @include media(medium){
+                height: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                margin-top: 1rem;
+                position: absolute;
+                top: 4rem;
+                margin-left: 3rem;
+                
+            }
+            li{
+                @include media(medium){
+                    padding: 2rem;
+                    margin: 0;
+                    
+                }
+
+                a{
+                    text-transform: uppercase;
+                    text-decoration: none;
+                }
+            }
+        }
+        
+        
+    }
+    .contact{
+
+        @include media(medium){
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-top: 3rem;
+        }
+
+        .contact-span{
+            text-decoration: none;
+            display: inline-block;
+
+            @include media(large){
+              display: block;
+              display: flex;
+              align-self: flex-end;
+               
+
+            }
+            @include media(medium){
+                
+                display: flex;
+                flex-direction: column;
+                top: 3rem;
+                left: 50%;
+                
+            }
+        }
+
+    }
+    .made{
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-between;
+        @include media(medium){
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            flex-direction: column;
+        }
+        p{
+            color: $p-purple;
+            @include media(medium){
+                margin-top: 1.2rem;
+            }
+        }
+    }
+
+}
+.m-bottom{
+    @include media(small){
+        margin-top: 3rem;
+        margin-bottom: 0;
+    }
+}
+
+.mail{
+    color: white;
+    text-decoration: none;
+}
+
