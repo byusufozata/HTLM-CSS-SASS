@@ -513,6 +513,12 @@ footer{
                 margin-left: 3rem;
                 
             }
+            @include media(small){
+                display: block;
+                margin-left: -50px;
+                margin-top: -30px;
+               
+            }
             li{
                 @include media(medium){
                     padding: 2rem;

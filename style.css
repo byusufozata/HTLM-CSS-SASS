@@ -663,6 +663,14 @@ footer .footer-box ul {
   }
 }
 
+@media (max-width: 540px) {
+  footer .footer-box ul {
+    display: block;
+    margin-left: -50px;
+    margin-top: -30px;
+  }
+}
+
 @media (max-width: 720px) {
   footer .footer-box ul li {
     padding: 2rem;
